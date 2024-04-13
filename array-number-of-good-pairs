@@ -13,3 +13,18 @@ class Solution {
         return result;
     }
 }
+// Answer 2
+
+class Solution {
+        public int numIdenticalPairs(int[] A) {
+        int ans = 0, cnt[] = new int[101];//creates a memory for cnt
+        for (int a: A) {
+         System.out.println(a);
+         System.out.println(cnt[a]);
+            cnt[a]++ //post increaments the empty array in tha 'a' position
+            ans += cnt[a]++;
+             System.out.println("ans--"+ans);
+        }
+        return ans;
+        }
+    }
