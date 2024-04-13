@@ -1,0 +1,12 @@
+//https://leetcode.com/problems/count-items-matching-a-rule/
+class Solution {
+    public int largestAltitude(int[] gain) {
+        int max_gain_sum =0;
+        int highestAltitude = 0;
+        for(int i =0 ;i< gain.length; i++){
+            max_gain_sum+=gain[i];
+            highestAltitude = Math.max(highestAltitude,max_gain_sum);
+        }
+        return highestAltitude;
+    }
+}
