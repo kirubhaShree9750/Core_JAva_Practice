@@ -1,0 +1,41 @@
+//https://leetcode.com/problems/add-to-array-form-of-integer
+class Solution {
+    public List<Integer> addToArrayForm(int[] num, int k) {
+  int sum,carry=0;
+     ArrayList<Integer> ans = new ArrayList<>();
+        for(int i=num.length-1;i>=0 || k!=0;i--){
+            if(i>=0){
+                sum = (k%10) + num[i] + carry;
+            }else{
+                sum = (k%10) + carry;
+            }
+            k=k/10;
+            carry = sum/10;
+            int result = sum%10;
+            ans.add(result);
+        }
+        if(carry>0){
+            ans.add(carry);
+        }
+        int i=0;
+        int j= ans.size()-1;
+        int temp;
+        while(i<j){
+            temp = ans.get(i);
+            ans.set(i,ans.get(j));
+            ans.set(j,temp);
+            i++;
+            j--;
+        }
+        return ans;
+    }
+}
+
+
+1)sum = Tak last digit to be added , add to last digit f num and add it with carry 
+2) carr = sum /10;
+3)result = sum%10;
+3)after loop 
+if carry > 0
+add last
+then swap last to first
