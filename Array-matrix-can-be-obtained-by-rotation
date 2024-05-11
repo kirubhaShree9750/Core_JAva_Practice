@@ -1,0 +1,23 @@
+//https://leetcode.com/problems/determine-whether-matrix-can-be-obtained-by-rotation/
+class Solution {
+    public boolean findRotation(int[][] mat, int[][] target) {
+
+       int[][] res = mat;
+       for(int i =0 ;i< 4; i++){
+        if(Arrays.deepEquals(res,target)) return true;
+          res = rotate(res);
+       }
+       return false;
+        
+    }
+    private int[][] rotate(int[][] mat ){
+        int n = mat.length;
+        int[][] response = new int[n][n];
+        for(int i = 0; i< n; i++){
+            for(int j = 0; j< n; j++){
+                response[i][j] = mat[n-1-j][i];
+            }
+        }
+        return response;
+    }
+}
