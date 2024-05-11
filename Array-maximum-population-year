@@ -1,0 +1,28 @@
+//https://leetcode.com/problems/maximum-population-year/description/
+
+class Main {
+    public static void main(String[] args) {
+        int[][] logs = {{1993,1999},{2000,2010}};
+           int[] arr = new int[101];
+        int birth_year = 0;
+        int death_year = 0;
+        // To find the population
+        for(int[] log: logs){
+            birth_year = log[0];
+            death_year = log[1];
+            for(int i =birth_year; i<death_year; i++){
+                arr[i-1950]++;
+                
+            }
+        }
+        int maxValue = 0;
+        int maxYear = 1950;
+        for(int i =0; i<arr.length; i++){
+                if(arr[i]> maxValue){
+                    maxValue = arr[i];
+                    maxYear = i+1950;
+                }
+        }
+        System.out.println(maxYear);
+    }
+}
