@@ -1,2 +1,4 @@
 Linear search - search only by one sequentialy until we get elements
 Binary search - Applies to Sorted array - s+e/2
+(s+e)/2 -> this may exceed the range of integer if start and end are larger
+s+((e-s)/2)
