@@ -93,7 +93,11 @@ If there occurs a problem like displayed in the below figure, you need to set a 
 What happens at compile time?
 At compile time, the Java file is compiled by Java Compiler (It does not interact with OS) and converts the Java code into bytecode.
 
-
+Can you have multiple classes in a java source file?
+Class A{}  converted to  A.class
+Class B{}                B.class
+Class C{}                C.class
+D.java
 
 Pagination. catching. zip verisionation
 
