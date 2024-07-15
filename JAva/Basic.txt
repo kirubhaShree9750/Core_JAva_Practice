@@ -99,6 +99,8 @@ Class B{}                B.class
 Class C{}                C.class
 D.java
 
+JVM
+JVM (Java Virtual Machine) is an abstract machine. It is called a virtual machine because it doesn't physically exist. It is a specification that provides a runtime environment in which Java bytecode can be executed.
 Pagination. catching. zip verisionation
 
 cart -> api -> checkout async 
