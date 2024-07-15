@@ -77,6 +77,18 @@ public void static main(String[] args)
 abstract public static void main(String[] args)
 
 
+ Can you save a Java source file by another name than the class name?
+Yes, if the class is not public. To compile:
+javac Hard.java
+To execute:
+java Simple
+Observe that, we have compiled the code with file name but running the program with class name. Therefore, we can save a Java program other than class name
+
+
+
+
+
+
 JAvac is not regonized as internal or external command?
 
 If there occurs a problem like displayed in the below figure, you need to set a path. Since DOS doesn't recognize javac and java as internal or external command. To overcome this problem, we need to set a path. The path is not required in a case where you save your program inside the JDK/bin directory. However, it is an excellent approach to set the path
