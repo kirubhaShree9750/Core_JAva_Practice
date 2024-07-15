@@ -51,6 +51,8 @@ Java supports dynamic compilation and automatic memory management (garbage colle
 
 Compile Time:
 Java Code -> byte code
+
+What happens in runtime?
 ClassFile ->Class Loader -> Bytecode verifier -> Interpreter -> Runtime -> Hardware
 
 Classloader: It is the subsystem of JVM that is used to load class files.
@@ -84,14 +86,14 @@ To execute:
 java Simple
 Observe that, we have compiled the code with file name but running the program with class name. Therefore, we can save a Java program other than class name
 
-
-
-
-
-
 JAvac is not regonized as internal or external command?
 
 If there occurs a problem like displayed in the below figure, you need to set a path. Since DOS doesn't recognize javac and java as internal or external command. To overcome this problem, we need to set a path. The path is not required in a case where you save your program inside the JDK/bin directory. However, it is an excellent approach to set the path
+
+What happens at compile time?
+At compile time, the Java file is compiled by Java Compiler (It does not interact with OS) and converts the Java code into bytecode.
+
+
 
 Pagination. catching. zip verisionation
 
