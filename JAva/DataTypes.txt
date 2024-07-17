@@ -1,0 +1,11 @@
+DataTypes:
+Primitive: byte,int,char,short,float,double
+non-primitive: class, interface,Arrays
+boolean -> 1 bit , Char->2 byte , byte-> 1 byte , short-> 2 byte , int ->4 byte , long -> 8 byte
+float->4 byte , double->8 byte
+
+a%b ->remainder
+a/b -> quotient
+
+a = 5, b =10
+a%b = 0 ; a/b = 2
