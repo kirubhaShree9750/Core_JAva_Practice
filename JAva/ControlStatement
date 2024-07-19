@@ -33,5 +33,34 @@ It controls the object creation. In other words, we can have private, protected,
 Q) What is the purpose of a default constructor?
 The default constructor is used to provide the default values to the object like 0, null, etc., depending on the type.
 
+Constructor can be overloaded even if they don't have objects with different parameters
 
 
+
+Java Constructor	                                           Java Method
+A constructor is used to initialize the state of an object.	A method is used to expose the behavior of an object.
+A constructor must not have a return type.	A method must have a return type.
+The constructor is invoked implicitly.	The method is invoked explicitly.
+The Java compiler provides a default constructor if you don't have any constructor in a class.	The method is not provided by the compiler in any case.
+The constructor name must be same as the class name.	The method name may or may not be same as the class name.
+
+
+Does constructor return any value?
+Yes, it is the current class instance (You cannot use return type yet it returns a value).
+
+Static block: called before main
+
+instance variable
+we have created an instance variable named count which is incremented in the constructor.
+Since instance variable gets the memory at the time of object creation, each object will have the copy of the instance variable.
+
+Static variable:
+static variable will get the memory only once during compile time , 
+if any object changes the value of the static variable, it will retain its value.
+
+Restrictions for the static method
+
+There are two main restrictions for the static method. They are:
+
+The static method can not use non static data member or call non-static method directly.
+this and super cannot be used in static context.
