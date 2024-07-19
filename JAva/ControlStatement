@@ -1,0 +1,37 @@
+if-else , if-elseif-else ,nested if 
+switch With break and without break, switch with enum
+loops ->  for loop -> loops are used to itierate parts of program several times, fixed number of iterations
+while loop -> number of iterations are not fixed
+do while -> execute loop atleast once and number of iterations are not fixed
+Infite loop
+for(;;){  
+//code to be executed  
+}  
+
+//Java For-each loop example which prints the  
+//elements of the array  
+public class ForEachExample {  
+public static void main(String[] args) {  
+    //Declaring an array  
+    int arr[]={12,23,44,56,78};  
+    //Printing array using for-each loop  
+    for(int i:arr){  
+        System.out.println(i);  
+    }  
+}  
+
+
+Break:
+
+The Java break statement is used to break loop or switch statement. 
+It breaks the current flow of the program at specified condition. In case of inner loop, it breaks only inner loop.
+
+constructor: A Java constructor cannot be abstract, static, final, and synchronized
+Note: We can use access modifiers while declaring a constructor.
+It controls the object creation. In other words, we can have private, protected, public or default constructor in Java.
+
+Q) What is the purpose of a default constructor?
+The default constructor is used to provide the default values to the object like 0, null, etc., depending on the type.
+
+
+
