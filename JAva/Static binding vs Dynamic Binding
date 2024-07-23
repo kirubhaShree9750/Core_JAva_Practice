@@ -30,5 +30,5 @@ class Dog extends Animal{
   a.eat();  
  }  
 }  
-
+In the above example object type cannot be determined by the compiler, because the instance of Dog is also an instance of Animal.So compiler doesn't know its type, only its base type.
 
