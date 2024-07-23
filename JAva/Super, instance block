@@ -1,0 +1,7 @@
+super Keyword
+super can be used to refer immediate parent class instance variable.
+super can be used to invoke immediate parent class method.
+super() can be used to invoke immediate parent class constructor.
+super() is added in each class constructor automatically by compiler if there is no super() or this().
+
+Instance Initializer Block:
