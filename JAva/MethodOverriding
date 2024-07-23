@@ -4,6 +4,20 @@ Rules for Java Method Overriding
 The method must have the same name as in the parent class
 The method must have the same parameter as in the parent class.
 
+Dynamic Method Dispatch:
+
+Dynamic method dispatch is the mechanism by which a call to an overridden method is resolved at run time, rather than
+compile time. Dynamic method dispatch is important because this is how Java implements run-time polymorphism.
+Let’s begin by restating an important principle: a superclass reference variable can refer to a subclass object.
+When an overridden method is called through a superclass reference, Java determines which version of that method to
+execute based upon the type of the object being referred to at the time the call occurs. Thus, this determination is
+made at run time.
+In other words, it is the type of the object being referred to (not the type of the reference variable)
+that determines which version of an overridden method will be executed.
+
+If B extends A then you can override a method in A through B with changing the return type of method to B.
+
+
 Why can we not override static method?
 It is because the static method is bound with class whereas instance method is bound with an object. Static belongs to the class area, and an instance belongs to the heap area.
 
@@ -40,7 +54,7 @@ In general, checked exceptions represent errors outside the control of the progr
 
 Java verifies checked exceptions at compile-time.
 
- Unchecked Exceptions
+Unchecked Exceptions
 If a program throws an unchecked exception, it reflects some error inside the program logic.
 
 For example, if we divide a number by 0, Java will throw ArithmeticException:
