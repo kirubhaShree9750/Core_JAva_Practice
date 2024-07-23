@@ -93,3 +93,49 @@ Output:
        parent class constructor invoked
        instance initializer block is invoked
        child class constructor invoked 10
+
+
+final:
+
+stop value change
+stop overriding
+stop Inheritance
+
+ Is final method inherited?
+
+Ans) Yes, final method is inherited but you cannot override it. For Example:
+
+class Bike{  
+  final void run(){System.out.println("running...");}  
+}  
+class Honda2 extends Bike{  
+   public static void main(String args[]){  
+    new Honda2().run();  
+   }  
+}  
+
+Can we initialize blank final variable?
+
+Yes, but only in constructor. 
+
+
+static blank final variable
+
+A static final variable that is not initialized at the time of declaration is known as static blank final variable. It can be initialized only in static block.
+
+
+Q) What is final parameter?
+If you declare any parameter as final, you cannot change the value of it.
+
+class Bike11{  
+  int cube(final int n){  
+   n=n+2;//can't be changed as n is final  
+   n*n*n;  
+  }  
+
+
+Can we declare a constructor final?
+No, because constructor is never inherited.
+
+
+
