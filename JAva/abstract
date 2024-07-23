@@ -1,0 +1,88 @@
+Abstract:
+A class which is declared with the abstract keyword is known as an abstract class in Java. It can have abstract and non-abstract methods (method with the body).
+
+Abstraction in Java
+Abstraction is a process of hiding the implementation details and showing only functionality to the user.
+
+Another way, it shows only essential things to the user and hides the internal details, for example, sending SMS where you type the text and send the message. You don't know the internal processing about the message delivery.
+
+
+Ways to achieve Abstraction
+There are two ways to achieve abstraction in java
+
+Abstract class (0 to 100%)
+Interface (100%)
+
+n abstract class must be declared with an abstract keyword.
+It can have abstract and non-abstract methods.
+It cannot be instantiated.
+It can have constructors and static methods also.
+It can have final methods which will force the subclass not to change the body of the method.
+
+
+abstract class Bike{  
+  abstract void run();  
+}  
+class Honda4 extends Bike{  
+void run(){System.out.println("running safely");}  
+public static void main(String args[]){  
+ Bike obj = new Honda4();  
+ obj.run();  
+}  
+}  
+
+
+Abstract class having constructor, data member and methods
+
+An abstract class can have a data member, abstract method, method body (non-abstract method), constructor, and even main() method.
+
+File: TestAbstraction2.java
+
+//Example of an abstract class that has abstract and non-abstract methods  
+ abstract class Bike{  
+   Bike(){System.out.println("bike is created");}  
+   abstract void run();  
+   void changeGear(){System.out.println("gear changed");}  
+ }  
+//Creating a Child class which inherits Abstract class  
+ class Honda extends Bike{  
+ void run(){System.out.println("running safely..");}  
+ }  
+//Creating a Test class which calls abstract and non-abstract methods  
+ class TestAbstraction2{  
+ public static void main(String args[]){  
+  Bike obj = new Honda();  
+  obj.run();  
+  obj.changeGear();  
+ }  
+
+-  If there is an abstract method in a class, that class must be abstract.
+-  If you are extending an abstract class that has an abstract method, you must either provide the implementation of the method or make this class abstract.
+- The abstract class can also be used to provide some implementation of the interface. 
+Example:
+interface A{  
+void a();  
+void b();  
+void c();  
+void d();  
+}  
+  
+abstract class B implements A{  
+public void c(){System.out.println("I am c");}  
+}  
+  
+class M extends B{  
+public void a(){System.out.println("I am a");}  
+public void b(){System.out.println("I am b");}  
+public void d(){System.out.println("I am d");}  
+}  
+  
+class Test5{  
+public static void main(String args[]){  
+A a=new M();  
+a.a();  
+a.b();  
+a.c();  
+a.d();  
+}}  
+
