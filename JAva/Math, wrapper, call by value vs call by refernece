@@ -1,0 +1,134 @@
+Java Math class
+
+- Java Math class provides several methods to work on math calculations like min(), max(), avg(), sin(), cos(), tan(), round(), ceil(), floor(), abs() etc.
+public class JavaMathExample1    
+{    
+    public static void main(String[] args)     
+    {    
+        double x = 28;    
+        double y = 4;    
+          
+        // return the maximum of two numbers  
+        System.out.println("Maximum number of x and y is: " +Math.max(x, y));   
+          
+        // return the square root of y   
+        System.out.println("Square root of y is: " + Math.sqrt(y));   
+          
+        //returns 28 power of 4 i.e. 28*28*28*28    
+        System.out.println("Power of x and y is: " + Math.pow(x, y));      
+  
+        // return the logarithm of given value       
+        System.out.println("Logarithm of x is: " + Math.log(x));   
+        System.out.println("Logarithm of y is: " + Math.log(y));  
+          
+        // return the logarithm of given value when base is 10      
+        System.out.println("log10 of x is: " + Math.log10(x));   
+        System.out.println("log10 of y is: " + Math.log10(y));    
+          
+        // return the log of x + 1  
+        System.out.println("log1p of x is: " +Math.log1p(x));    
+  
+        // return a power of 2    
+        System.out.println("exp of a is: " +Math.exp(x));    
+          
+        // return (a power of 2)-1  
+        System.out.println("expm1 of a is: " +Math.expm1(x));  
+    }    
+}    
+
+
+Wrapper classes in Java:
+
+The wrapper class in Java provides the mechanism to convert primitive into object and object into primitive.
+Since J2SE 5.0, autoboxing and unboxing feature convert primitives into objects and objects into primitives automatically.
+The automatic conversion of primitive into an object is known as autoboxing and vice-versa unboxing.
+
+
+Where we need wrapper class:
+
+Change the value in Method: Java supports only call by value. So, if we pass a primitive value, it will not change the original value. But, if we convert the primitive value in an object, it will change the original value.
+Serialization: We need to convert the objects into streams to perform the serialization. If we have a primitive value, we can convert it in objects through the wrapper classes.
+Synchronization: Java synchronization works with objects in Multithreading.
+java.util package: The java.util package provides the utility classes to deal with objects.
+Collection Framework: Java collection framework works with objects only. All classes of the collection framework (ArrayList, LinkedList, Vector, HashSet, LinkedHashSet, TreeSet, PriorityQueue, ArrayDeque, etc.) deal with objects only.
+
+
+/Java program to convert primitive into objects  
+//Autoboxing example of int to Integer  
+public class WrapperExample1{  
+public static void main(String args[]){  
+//Converting int into Integer  
+int a=20;  
+Integer i=Integer.valueOf(a);//converting int into Integer explicitly  
+Integer j=a;//autoboxing, now compiler will write Integer.valueOf(a) internally  
+  
+System.out.println(a+" "+i+" "+j);  
+}}  
+
+
+//Unboxing example of Integer to int  
+public class WrapperExample2{    
+public static void main(String args[]){    
+//Converting Integer to int    
+Integer a=new Integer(3);    
+int i=a.intValue();//converting Integer to int explicitly  
+int j=a;//unboxing, now compiler will write a.intValue() internally    
+    
+System.out.println(a+" "+i+" "+j);    
+}}    
+
+
+Custom wrapper class:
+
+
+Call by Value and Call by Reference in Java
+There is only call by value in java, not call by reference. If we call a method passing a value, it is known as call by value. The changes being done in the called method, 
+is not affected in the calling method
+
+
+class Operation{  
+ int data=50;  
+  
+ void change(int data){  
+ data=data+100;//changes will be in the local variable only  
+ }  
+     
+ public static void main(String args[]){  
+   Operation op=new Operation();  
+  
+   System.out.println("before change "+op.data);  
+   op.change(500);  
+   System.out.println("after change "+op.data);  
+  
+ }  
+}  
+
+
+
+Java Command Line Arguments
+
+Simple example of command-line argument
+Example of command-line argument that prints all the values
+The java command-line argument is an argument i.e. passed at the time of running the java program.
+
+The arguments passed from the console can be received in the java program and it can be used as an input.
+
+class CommandLineExample{  
+public static void main(String args[]){  
+System.out.println("Your first argument is: "+args[0]);  
+}  
+}  
+
+compile by > javac CommandLineExample.java  
+run by > java CommandLineExample sonoo  
+
+
+1)	Object is an instance of a class.	Class is a blueprint or template from which objects are created.
+2)	Object is a real world entity such as pen, laptop, mobile, bed, keyboard, mouse, chair etc.	Class is a group of similar objects.
+3)	Object is a physical entity.	Class is a logical entity.
+4)	Object is created through new keyword mainly e.g.
+Student s1=new Student();	Class is declared using class keyword e.g.
+class Student{}
+5)	Object is created many times as per requirement.	Class is declared once.
+6)	Object allocates memory when it is created.	Class doesn't allocated memory when it is created.
+7)	There are many ways to create object in java such as new keyword, newInstance() method, clone() method, factory method and deserialization.	There is only one way to define class in java using class keyword.
