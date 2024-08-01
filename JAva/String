@@ -31,4 +31,14 @@ By new keyword
 String s=new String("Welcome");//creates two objects and one reference variable  
 In such case, JVM will create a new string object in normal (non-pool) heap memory, and the literal "Welcome" will be placed in the string constant pool. The variable s will refer to the object in a heap (non-pool).
 
+Immutable String in Java:
+
+The immutability of String helps to minimize the usage in the heap memory. 
+When we try to declare a new String object, the JVM checks whether the value already exists in the String pool or not. 
+If it exists, the same value is assigned to the new object. This feature allows Java to use the heap space efficiently.
+
+ ClassLoader:
+
+A ClassLoader in Java uses a String object as an argument.
+Consider, if the String object is modifiable, the value might be changed and the class that is supposed to be loaded might be different.
 
