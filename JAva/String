@@ -45,7 +45,7 @@ If it exists, the same value is assigned to the new object. This feature allows 
 A ClassLoader in Java uses a String object as an argument.
 Consider, if the String object is modifiable, the value might be changed and the class that is supposed to be loaded might be different.
 
-HEap Space:
+Heap Space:
 
 The immutability of String helps to minimize the usage in the heap memory. When we try to declare a new String object, the JVM checks whether the value already exists in the String pool or not.
 If it exists, the same value is assigned to the new object. This feature allows Java to use the heap space efficiently
@@ -130,7 +130,7 @@ public class StrJoin
         String s1 = new String("Hello");    //String 1  
         String s2 = new String(" World");    //String 2  
         String s = String.join("",s1,s2);   //String 3 to store the result  
-            System.out.println(s.toString());  //Displays result  
+        System.out.println(s.toString());  //Displays result  
     }  
 }  
 
