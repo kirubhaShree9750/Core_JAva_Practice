@@ -13,3 +13,48 @@ No.	String	                        StringBuffer
 3)	String class overrides the equals() method of Object class. So you can compare the contents of two strings by equals() method.	StringBuffer class doesn't override the equals() method of Object class.
 4)	String class is slower while performing concatenation operation.	StringBuffer class is faster while performing concatenation operation.
 5)	String class uses String constant pool.	StringBuffer uses Heap memory
+
+
+No.	StringBuffer	StringBuilder
+1)	StringBuffer is synchronized i.e. thread safe. It means two threads can't call the methods of StringBuffer simultaneously.	StringBuilder is non-synchronized i.e. not thread safe. It means two threads can call the methods of StringBuilder simultaneously.
+2)	StringBuffer is less efficient than StringBuilder.	StringBuilder is more efficient than StringBuffer.
+3)	StringBuffer was introduced in Java 1.0	StringBuilder was introduced in Java 1.5
+
+
+
+
+
+How to create Immutable class?
+There are many immutable classes like String, Boolean, Byte, Short, Integer, Long, Float, Double etc. In short, all the wrapper classes and String class is immutable. We can also create immutable class by creating final class that have final data members as the example given below:
+
+Example to create Immutable class
+In this example, we have created a final class named Employee. It have one final datamember, a parameterized constructor and getter method.
+
+ImmutableDemo.java
+
+public final class Employee  
+{    
+final String pancardNumber;    
+public Employee(String pancardNumber)  
+{    
+this.pancardNumber=pancardNumber;    
+}  
+public String getPancardNumber(){    
+return pancardNumber;    
+}    
+}    
+public class ImmutableDemo  
+{  
+public static void main(String ar[])  
+{  
+Employee e = new Employee("ABC123");  
+String s1 = e.getPancardNumber();  
+System.out.println("Pancard Number: " + s1);  
+}  
+}
+
+The above class is immutable because:
+
+The instance variable of the class is final i.e. we cannot change the value of it after creating an object.
+The class is final so we cannot create the subclass.
+There is no setter methods i.e. we have no option to change the value of the instance variable
