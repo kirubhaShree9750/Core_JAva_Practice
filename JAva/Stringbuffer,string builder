@@ -1,0 +1,15 @@
+Java StringBuffer class is used to create mutable (modifiable) String objects. The StringBuffer class in Java is the same as String class except it is mutable i.e. it can be changed.
+
+Note: Java StringBuffer class is thread-safe i.e. multiple threads cannot access it simultaneously. So it is safe and will result in an order.
+
+Java StringBuilder Class
+Java StringBuilder class is used to create mutable (modifiable) String. The Java StringBuilder class is same as StringBuffer class except that it is non-synchronized
+
+StringBuffer() and StringBuilder()	It creates an empty String Builder with the initial capacity of 16.
+
+No.	String	                        StringBuffer
+1)	The String class is immutable.	The StringBuffer class is mutable.
+2)	String is slow and consumes more memory when we concatenate too many strings because every time it creates new instance.	StringBuffer is fast and consumes less memory when we concatenate t strings.
+3)	String class overrides the equals() method of Object class. So you can compare the contents of two strings by equals() method.	StringBuffer class doesn't override the equals() method of Object class.
+4)	String class is slower while performing concatenation operation.	StringBuffer class is faster while performing concatenation operation.
+5)	String class uses String constant pool.	StringBuffer uses Heap memory
