@@ -21,9 +21,6 @@ No.	StringBuffer	StringBuilder
 3)	StringBuffer was introduced in Java 1.0	StringBuilder was introduced in Java 1.5
 
 
-
-
-
 How to create Immutable class?
 There are many immutable classes like String, Boolean, Byte, Short, Integer, Long, Float, Double etc. In short, all the wrapper classes and String class is immutable. We can also create immutable class by creating final class that have final data members as the example given below:
 
@@ -58,3 +55,60 @@ The above class is immutable because:
 The instance variable of the class is final i.e. we cannot change the value of it after creating an object.
 The class is final so we cannot create the subclass.
 There is no setter methods i.e. we have no option to change the value of the instance variable
+
+
+Java toString() Method:
+
+ you want to represent any object as a string, toString() method comes into existence.
+
+The toString() method returns the String representation of the object.
+
+If you print any object, Java compiler internally invokes the toString() method on the object. So overriding the toString() method, returns the desired output, it can be the state of an object etc. depending on your implementation
+
+class Student{  
+ int rollno;  
+ String name;  
+ String city;  
+  
+ Student(int rollno, String name, String city){  
+ this.rollno=rollno;  
+ this.name=name;  
+ this.city=city;  
+ }  
+  
+ public static void main(String args[]){  
+   Student s1=new Student(101,"Raj","lucknow");  
+   Student s2=new Student(102,"Vijay","ghaziabad");  
+     
+   System.out.println(s1);//compiler writes here s1.toString()  
+   System.out.println(s2);//compiler writes here s2.toString()  
+ }  
+}  
+
+Output:
+
+Student@1fee6fc
+Student@1eed786
+
+class Student{  
+ int rollno;  
+ String name;  
+ String city;  
+  
+ Student(int rollno, String name, String city){  
+ this.rollno=rollno;  
+ this.name=name;  
+ this.city=city;  
+ }  
+ public String toString(){//overriding the toString() method  
+  return rollno+" "+name+" "+city;  
+ }  
+ public static void main(String args[]){  
+   Student s1=new Student(101,"Raj","lucknow");  
+   Student s2=new Student(102,"Vijay","ghaziabad");  
+     
+   System.out.println(s1);//compiler writes here s1.toString()  
+   System.out.println(s2);//compiler writes here s2.toString()  
+ }  
+}  
+
