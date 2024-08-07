@@ -112,3 +112,26 @@ class Student{
  }  
 }  
 
+indexOf():
+The Java String class indexOf() method returns the position of the first occurrence of the specified character or string in a specified string.
+
+Signature
+There are four overloaded indexOf() method in Java. The signature of indexOf() methods are given below:
+
+No.	Method	Description
+1	int indexOf(int ch)	It returns the index position for the given char value
+2	int indexOf(int ch, int fromIndex)	It returns the index position for the given char value and from index
+3	int indexOf(String substring)	It returns the index position for the given substring
+4	int indexOf(String substring, int fromIndex)	
+
+if the start index is negative value
+end index is lower than starting index.
+Either starting or ending index is greater than the total number of characters present in the string.
+
+public class SubstringExample{  
+public static void main(String args[]){  
+String s1="javatpoint";  
+System.out.println(s1.substring(2,4));//returns va  
+System.out.println(s1.substring(2));//returns vatpoint  
+}}  
+
