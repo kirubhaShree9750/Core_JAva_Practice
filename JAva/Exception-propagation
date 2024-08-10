@@ -1,1 +1,135 @@
+Exception Propagation:
+
+An exception is first thrown from the top of the stack and if it is not caught, 
+it drops down the call stack to the previous method. If not caught there, the exception again 
+drops down to the previous method, 
+and so on until they are caught or until they reach the very bottom of the call stack.
+This is called exception propagation
+
+Note:
+- By default Unchecked Exceptions are forwarded in calling chain (propagated).
+- For checked exception through "throws" exception propagation is achieved.
+
+class TestExceptionPropagation1{  
+  void m(){  
+    int data=50/0;  
+  }  
+  void n(){  
+    m();  
+  }  
+  void p(){  
+   try{  
+    n();  
+   }catch(Exception e){System.out.println("exception handled");}  
+  }  
+  public static void main(String args[]){  
+   TestExceptionPropagation1 obj=new TestExceptionPropagation1();  
+   obj.p();  
+   System.out.println("normal flow...");  
+  }  
+}  
+
+Java throws keyword
+The Java throws keyword is used to declare an exception. It gives an information to the programmer that there may occur an exception. So, it is better for the programmer to provide the exception handling code so that the normal flow of the program can be maintained.
+
+Which exception should be declared?
+Ans: Checked exception only, because
+unchecked exception: under our control so we can correct our code.
+error: beyond our control. For example, we are unable to do anything if there occurs VirtualMachineError or StackOverflowError.
+
+Rule: If we are calling a method that declares an exception, we must either caught or declare the exception.
+
+Case 1: Handle Exception Using try-catch block
+In case we handle the exception, the code will be executed fine whether exception occurs during the program or not.
+
+import java.io.*;  
+class M{  
+ void method()throws IOException{  
+  throw new IOException("device error");  
+ }  
+}  
+public class Testthrows2{  
+   public static void main(String args[]){  
+    try{  
+     M m=new M();  
+     m.method();  
+    }catch(Exception e){System.out.println("exception handled");}     
+  
+    System.out.println("normal flow...");  
+  }  
+}  
+
+Case 2: Declare Exception
+In case we declare the exception, if exception does not occur, the code will be executed fine.
+In case we declare the exception and the exception occurs, it will be thrown at runtime
+because throws does not handle the exception.
+
+A) If exception does not occur
+
+import java.io.*;  
+class M{  
+ void method()throws IOException{  
+  System.out.println("device operation performed");  
+ }  
+}  
+class Testthrows3{  
+   public static void main(String args[])throws IOException{//declare exception  
+     M m=new M();  
+     m.method();  
+  
+    System.out.println("normal flow...");  
+  }  
+}  
+
+B) If exception occurs
+
+import java.io.*;  
+class M{  
+ void method()throws IOException{  
+  throw new IOException("device error");  
+ }  
+}  
+class Testthrows4{  
+   public static void main(String args[])throws IOException{//declare exception  
+     M m=new M();  
+     m.method();  
+  
+    System.out.println("normal flow...");  
+  }  
+}  
+
+Can we rethrow an exception?
+Yes, by throwing same exception in catch block.
+
+Sr. no.	Basis of Differences	throw	throws
+1.	Definition	Java throw keyword is used throw an exception explicitly in the code, inside the function or the block of code.	Java throws keyword is used in the method signature to declare an exception which might be thrown by the function while the execution of the code.
+2.	Usage	Type of exception Using throw keyword, we can only propagate unchecked exception i.e., the checked exception cannot be propagated using throw only.	Using throws keyword, we can declare both checked and unchecked exceptions. However, the throws keyword can be used to propagate checked exceptions only.
+3.	Syntax	The throw keyword is followed by an instance of Exception to be thrown.	The throws keyword is followed by class names of Exceptions to be thrown.
+4.	Declaration	throw is used within the method.	throws is used with the method signature.
+5.	Internal implementation	We are allowed to throw only one exception at a time i.e. we cannot throw multiple exceptions.	We can declare multiple exceptions using throws keyword that can be thrown by the method. For example, main() throws IOException, SQLException.
+
+Public class TestThrow{
+public static int divideNum(int m, int n)throws ArithmeticException,IOException{
+int s=m/n;
+return s;
+}
+public static void main(String[] args){
+try{
+divideNum(3,0);
+}catch(ArthimeticException e){
+System.out.println("\nNumber cannot be divided by 0");
+}
+}
+}
+
+
+Sr. no.	Key	    final	                                                    finally	finalize
+1.	Definition ---	Final is the keyword and access modifier which is used to apply restrictions on a class, method or variable.--finally is the block in Java Exception Handling to execute the important code whether the exception occurs or not.---finalize is the method in Java which is used to perform clean up processing just before object is garbage collected.
+2.	Applicable to ---	Final keyword is used with the classes, methods and variables.---	Finally block is always related to the try and catch block in exception handling. --	finalize() method is used with the objects.
+3.	Functionality	---(1) Once declared, final variable becomes constant and cannot be modified.
+(2) final method cannot be overridden by sub class.
+(3) final class cannot be inherited.	(1) finally block runs the important code even if exception occurs or not.
+(2) finally block cleans up all the resources used in try block	finalize method performs the cleaning activities with respect to the object before its destruction.
+4.	Execution	Final method is executed only when we call it.	Finally block is executed as soon as the try-catch block is executed.
+It's execution is not dependant on the exception.
 
