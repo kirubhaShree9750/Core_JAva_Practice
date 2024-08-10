@@ -112,3 +112,54 @@ Note: If you don't handle the exception, before terminating the program, JVM exe
 
 finally block in Java can be used to put "cleanup" code such as closing a file, closing connection, etc.
 The important statements to be printed can be placed in the finally block.
+
+Java throw Exception:
+
+In Java, exceptions allows us to write good quality codes where the errors
+are checked at the compile time instead of runtime and we can create custom exceptions making the code recovery 
+and debugging easier.
+
+In Java, exceptions allows us to write good quality codes where the errors are checked at the compile time instead of runtime and we can create custom exceptions making the code recovery and debugging easier.
+
+Java throw keyword Example
+Example 1: Throwing Unchecked Exception
+
+public class TestThrow1{
+public static void validate(int age){
+if(age>18){
+throw new ArithmeticException("Person is not eligible");
+}else{
+System.out.println("person is eligible")
+}
+}
+public static void main(String[] args){
+validate(18);
+}
+}
+
+class UserDefinedException extends Exception  
+{  
+    public UserDefinedException(String str)  
+    {  
+        // Calling constructor of parent Exception  
+        super(str);  
+    }  
+}  
+// Class that uses above MyException  
+public class TestThrow3  
+{  
+    public static void main(String args[])  
+    {  
+        try  
+        {  
+            // throw an object of user defined exception  
+            throw new UserDefinedException("This is user-defined exception");  
+        }  
+        catch (UserDefinedException ude)  
+        {  
+            System.out.println("Caught the exception");  
+            // Print the message from MyException object  
+            System.out.println(ude.getMessage());  
+        }  
+    }  
+}  
