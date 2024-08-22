@@ -5,3 +5,18 @@ Java Collection means a single unit of objects. Java Collection framework provid
 
 ArrayList:
 
+- Stores duplicate elemet
+- Maintains insertion order and non -synchronized
+- It;s non-synchronized
+- It uses dynamic array to store eleemts
+
+
+LinkedList:
+-It uses doubly linked list to store elements
+- Maintains insertion order and non-synchronized
+- Manipulation is fast
+Vector
+- Synchronized 
+- Uses dynamic array to store elements
+Stack
+The stack is the subclass of Vector. It implements the last-in-first-out data structure
