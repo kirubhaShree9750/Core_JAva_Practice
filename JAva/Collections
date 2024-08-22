@@ -9,7 +9,13 @@ ArrayList:
 - Maintains insertion order and non -synchronized
 - It;s non-synchronized
 - It uses dynamic array to store eleemts
+- Java allows random access because array works index basis
 
+Internal implementation:
+- Size of arrayList is fixed but you can update size
+- input first time set initial size and if you want to add other 4 eleemnts .it will create a new list of new size to accomdate elements.
+- it will copy old elements to new elements and delete old eleements 
+- so manipulation of array list is slower
 
 LinkedList:
 -It uses doubly linked list to store elements
