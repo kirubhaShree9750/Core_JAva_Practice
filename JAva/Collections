@@ -35,3 +35,15 @@ Array
 5) The memory location for the elements of an ArrayList is contiguous.	The location for the elements of a linked list is not contagious.
 6) Generally, when an ArrayList is initialized, a default capacity of 10 is assigned to the ArrayList.	There is no case of default capacity in a LinkedList. In LinkedList, an empty list is created when a LinkedList is initialized.
 7) To be precise, an ArrayList is a resizable array.	LinkedList implements the doubly linked list of the list interface.
+
+Convert list to Array:
+String[] array = fruitList.toArray(new String[fruitList.size()]);    
+
+  Collections.sort(list);
+List li = new ArrayList<String>();
+li.add("kirubha");
+li.add("Shree");
+Iterator it = li.iterator();
+while(it.next()){
+}
+
