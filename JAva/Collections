@@ -47,3 +47,20 @@ Iterator it = li.iterator();
 while(it.next()){
 }
 
+Similarities:Array can be multi-dimensional.	ArrayList is always single-dimensional.
+Array and ArrayList both are used for storing elements.
+Array and ArrayList both can store null values.
+They can have duplicate values.
+They do not preserve the order of elements.
+
+Array	                      ArrayList
+Array is static in size.	ArrayList is dynamic in size.
+An array is a fixed-length data structure.	ArrayList is a variable-length data structure. It can be resized itself when needed.
+It is mandatory to provide the size of an array while initializing it directly or indirectly.	We can create an instance of ArrayList without specifying its size. Java creates ArrayList of default size.
+It performs fast in comparison to ArrayList because of fixed size.	ArrayList is internally backed by the array in Java. The resize operation in ArrayList slows down the performance.
+An array can store both objects and primitives type.	We cannot store primitive type in ArrayList. It automatically converts primitive type to object.
+We use for loop or for each loop to iterate over an array.	We use an iterator to iterate over ArrayList.
+We cannot use generics along with array because it is not a convertible type of array.	ArrayList allows us to store only generic/ type, that's why it is type-safe.
+Array provides a length variable which denotes the length of an array.	ArrayList provides the size() method to determine the size of ArrayList.
+We can add elements in an array by using the assignment operator.	Java provides the add() method to add elements in the ArrayList.
+Array can be multi-dimensional.	ArrayList is always single-dimensional.
